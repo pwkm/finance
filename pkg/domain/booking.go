@@ -21,3 +21,10 @@ type BookingSvc interface {
 	Create(b *Booking) error
 	Delete(id uuid.UUID) error
 }
+
+type BookingDB interface {
+	Get(id uuid.UUID) (*Booking, error)
+	List(category string) ([]*Booking, error)
+	Create(b *Booking) error
+	Delete(id uuid.UUID) error
+}
